@@ -25,7 +25,5 @@ public class ObjectDemo {
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
-
 	}
-
 }
