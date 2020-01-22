@@ -1,46 +1,50 @@
 package org.opentutorials.javatutorials.generic;
 
-class StudentInfo {
-	public int grade;
+interface Info { // 인터페이스
+	int getLevel(); // 메소드
 
-	StudentInfo(int grade) {
-		this.grade = grade;
-	}
+	String getString();
+
 }
 
-class EmployeeInfo {
-	public int rank; //123
+///////////////////////////////////////////
+class EmployeeInfo implements Info {
+	public int rank; // 1
+	public String rank2; // rank2;
 
-	EmployeeInfo(int rank) {
+	EmployeeInfo(int rank, String rank2) {
 		this.rank = rank;
+		this.rank2 = rank2;
+	}
 
+	public int getLevel() { // 메소드오버라이딩
+		return this.rank;
+	}
+
+	public String getString() {
+		return this.rank2;
 	}
 }
 
-class Person {
-	public Object info;   //Object EmployeeInfo(123)
-	
-	public Person(Object info) { 
+/////////////////////////////////////////
+class Person<T extends Info> { // Info 의 자식들만 T에 올 수 있다 .
+	public T info; // 전역변수
+	public T info2;
+
+	Person(T info, T info2) { // Person(EmployeeInfo info) {}
 		this.info = info;
+		System.out.println(info.getLevel());
+		System.out.println(info.getString());
 	}
 }
-//wrapper class 
+
+//제네릭은 참조형,래퍼런스.Wrapper class  데이터 들만 들어 갈 수 있다 . 
 public class GenricDemo {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-//객체 형이 다른 형태 캐스팅 할때 맞지 않으면 나는 오류 입니다.
-		Person p1 = new Person(new EmployeeInfo(123)); // String값으로 "부장"
-		//값으로써의 object 는 어떤 걸로도 변환을 못한다.
-		//Object -> Object
-		//Object obj; <- String, Integer, Person, GenericDemo
-		//new Object();
-		//(String)obj
-	//Object 변수에다 String 값이 들어갔다 .
-		//String을  EmployeeInfo 로 형변환 하려한다 .
-		EmployeeInfo ei =(EmployeeInfo) p1.info; //데이터타입 Object 인데 EmployeeInfo(123)값 들어간 상황
-		//System.out.println(ei.rank);
-		System.out.println(ei.rank);
-	
+		EmployeeInfo in = new EmployeeInfo(1, "a");
+		Person<EmployeeInfo> p1 = new Person<EmployeeInfo>(in, in);
+		// Person<String> p2 = new Person<String>("부장");
+
 	}
 
 }
