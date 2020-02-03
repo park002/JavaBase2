@@ -9,7 +9,7 @@ public class MainClassAutowired {
 
 	public static void main(String[] args) {
 		
-		String[] keyWords = {"c", "c++", "java", "jsp",  "spring"};
+		String[] keyWords = {"c", "c++", "java", "jsp",  "spring"}; 
 		String[] values = {"C는 1972년 켄 톰슨과 데니스 리치가 유닉스 운영 체제에서 사용하기 위해 개발한 프로그래밍 언어이다.", 
 				"C++는 AT&T 벨 연구소의 비야네 스트롭스트룹이 1983년 발표하여 발전한 프로그래밍 언어이다.", 
 				"자바는 썬 마이크로시스템즈의 제임스 고슬링(James Gosling)과 다른 연구원들이 개발한 객체 지향적 프로그래밍 언어이다.", 
@@ -17,9 +17,8 @@ public class MainClassAutowired {
 				"스프링 프레임워크는 자바 플랫폼을 위한 오픈소스 애플리케이션 프레임워크로서 간단히 스프링이라고도 불린다."};
 		GenericXmlApplicationContext ctx =  new GenericXmlApplicationContext("classpath:appCtxUseAutowired.xml"); //스프링컨테이너 IOC컨테이너 생성
 		WordRegisterService registerService = ctx.getBean("registerService", WordRegisterService.class);
-		for (int i = 0; i < values.length; i++) {
+		for (int i = 0; i < values.length; i++) {//4
 			WordSet wordSet = new WordSet(keyWords[i], values[i]);
-	
 			registerService.register(wordSet);
 		}
 		
