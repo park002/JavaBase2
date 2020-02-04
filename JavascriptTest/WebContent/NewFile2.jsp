@@ -20,9 +20,33 @@ span {
 <title>Style 속성엔 css가 와야한다</title>	
 </head>
 <body>
-	<h1>
-		<a href="index.html"> WEB</a>
-	</h1>
+	<h1><a href="index.html"> WEB</a></h1>
+	<input type="button" value="night" onclick=
+		"document.querySelector('body').style.backgroundColor='black'; 
+	     document.querySelector('body').style.color='white';">
+	<input type="button" value="day"  onclick=
+		"document.querySelector('body').style.backgroundColor='white'; 
+	     document.querySelector('body').style.color='black';">
+	     
+	 <input id="night_day" type="button" value="night" onclick="
+	 if(document.querySelector('#night_day').value =='night') {
+		 document.querySelector('body').style.backgroundColor='black';
+		 document.querySelector('body').style.color='white';
+		 document.querySelector('#night_day').value ='day';
+	 }
+	 else {
+		 document.querySelector('body').style.backgroundColor='white';
+		 document.querySelector('body').style.color='black';
+		 document.querySelector('#night_day').value ='night';
+		 
+	 }
+	 ">
+	<ol>
+	<li><a href="1.html">HTML</a> </li>
+	<li><a href="2.html">CSS</a></li>
+	<li><a href="3.html">JavaScript</a> </li>
+	</ol>
+	
 	<h2 style='background-color: coral; color: powderblue'>JavaScrpt</h2>
 	<p>
 	
