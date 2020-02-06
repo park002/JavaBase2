@@ -21,24 +21,25 @@ span {
 </head>
 <body>
 	<h1><a href="index.html"> WEB</a></h1>
-	<input type="button" value="night" onclick=
-		"document.querySelector('body').style.backgroundColor='black'; 
-	     document.querySelector('body').style.color='white';">
-	<input type="button" value="day"  onclick=
-		"document.querySelector('body').style.backgroundColor='white'; 
-	     document.querySelector('body').style.color='black';">
-	     
-	 <input id="night_day" type="button" value="night" onclick="
-	 if(document.querySelector('#night_day').value =='night') {
-		 document.querySelector('body').style.backgroundColor='black';
-		 document.querySelector('body').style.color='white';
-		 document.querySelector('#night_day').value ='day';
+	
+	 <input type="button" value="night" onclick="
+	 var target = document.querySelector('body');
+	 if(this.value =='night') {
+		 target.style.backgroundColor='black';
+		 target.style.color='white';
+		 this.value ='day';
+		 
+		 var links =document.querySelectorAll('a');
+		 var i = 0; //0~2;
+		 while(i<links.length) { 
+			 links[i].style.color='powderblue';
+			 i=i+1;
+		 }
 	 }
 	 else {
-		 document.querySelector('body').style.backgroundColor='white';
-		 document.querySelector('body').style.color='black';
-		 document.querySelector('#night_day').value ='night';
-		 
+		 target.style.backgroundColor='white';
+		 target.style.color='black';
+		 this.value ='night';
 	 }
 	 ">
 	<ol>
@@ -64,5 +65,6 @@ span {
 	<span>″성공의 핵심 요소는 인내심이다.”</span>	
 	</p>
 
+	
 </body>
 </html>
