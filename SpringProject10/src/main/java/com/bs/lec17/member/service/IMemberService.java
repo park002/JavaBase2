@@ -10,5 +10,5 @@ public interface IMemberService {
 	
 	void memberModify(); //멤버수정
 	
-	void memberRemove(); //멤버제거
+	void memberRemove(Member member); //멤버제거
 }

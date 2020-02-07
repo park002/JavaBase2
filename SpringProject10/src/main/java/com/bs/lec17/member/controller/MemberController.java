@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,22 +22,13 @@ public class MemberController {
 	MemberService service;
 	
 	@RequestMapping(value="/memJoin", method=RequestMethod.POST)
-	public String memJoin(Member member) {
-//		String memId = request.getParameter("memId"); //박재호입니다
-//		String memPw = request.getParameter("memPw");
-//		String memMail = request.getParameter("memMail");
-//		String memPhone1 = request.getParameter("memPhone1");
-//		String memPhone2 = request.getParameter("memPhone2");
-//		String memPhone3 = request.getParameter("memPhone3");
+	public String memJoin(@ModelAttribute("mem")Member member) {//커맨드 객체사용 html name 의 값이 member멤버에 속한다면 setter 엔 이미 값이 들어간 상태 
+
 		
 		service.memberRegister(member.getMemId(), member.getMemPw(), 
 				member.getMemMail(), member.getMemPhone1(), member.getMemPhone2(), member.getMemPhone3());	
 		
-//		model.addAttribute("memId", memId); //key , value 
-//		model.addAttribute("memPw", memPw);
-//		model.addAttribute("memMail", memMail);
-//		model.addAttribute("memPhone", memPhone1 + " - " + memPhone2 + " - " + memPhone3);
-		
+
 		return "memJoinOk";
 	}
 	
@@ -55,9 +47,16 @@ public class MemberController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
 		return "memLoginOk";
 	}
+	
+	@RequestMapping(value="/memRemove", method=RequestMethod.POST)
+	public String memRemove(@ModelAttribute("mem")Member member) {
+		service.memberRemove(member);
+		
+		return "memRemove";
+	}
+	
+
 	
 }

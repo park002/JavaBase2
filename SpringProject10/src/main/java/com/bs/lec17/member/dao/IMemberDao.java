@@ -1,5 +1,7 @@
 package com.bs.lec17.member.dao;
 
+import java.util.Map;
+
 import com.bs.lec17.member.Member;
 
 public interface IMemberDao { //인터페이스
@@ -10,6 +12,6 @@ public interface IMemberDao { //인터페이스
 	
 	void memberUpdate();
 	
-	void memberDelete();
+	Map<String, Member> memberDelete(Member member);
 	
 }
