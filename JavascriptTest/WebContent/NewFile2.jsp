@@ -14,33 +14,40 @@
 span {
 		color:blue;
 }
-
 </style>
 <meta charset="UTF-8">
 <title>Style 속성엔 css가 와야한다</title>	
+<script>
+    function nigthDayHandler(self) {
+    var target  = document.querySelector('body');
+    if(self.value=='night') {
+	  target.style.backgroundColor='black';
+	  target.style.color='white';
+	  self.value='day';
+	  var alist = document.querySelectorAll('a');
+	  var i =0;
+	while(i<alist.length) {
+	  alist[i].style.color='powderblue';
+	  i=i+1;
+	 }
+}
+else {
+	 target.style.backgroundColor='white';
+	 target.style.color='black';
+	 self.value='night';
+	  var alist = document.querySelectorAll('a');
+	 var i =0;
+	 while(i<alist.length) {
+	 alist[i].style.color='blue';
+	 i=i+1;
+	 }
+}
+}
+</script>
 </head>
 <body>
 	<h1><a href="index.html"> WEB</a></h1>
-	
-	 <input type="button" value="night" onclick="
-	 var target = document.querySelector('body');
-	 if(this.value =='night') {
-		 target.style.backgroundColor='black';
-		 target.style.color='white';
-		 this.value ='day';
-		 
-		 var links =document.querySelectorAll('a');
-		 var i = 0; //0~2;
-		 while(i<links.length) { 
-			 links[i].style.color='powderblue';
-			 i=i+1;
-		 }
-	 }
-	 else {
-		 target.style.backgroundColor='white';
-		 target.style.color='black';
-		 this.value ='night';
-	 }
+	 <input type="button" value="night" onclick="nigthDayHandler(this);
 	 ">
 	<ol>
 	<li><a href="1.html">HTML</a> </li>
