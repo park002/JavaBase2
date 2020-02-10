@@ -3,20 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-.js{ 
-		font-weight:bold;
-		color:red;
-}
-#first{
-    color:green;
-}
-span {
-		color:blue;
-}
-</style>
-<meta charset="UTF-8">
-<title>Style 속성엔 css가 와야한다</title>	
 <script>
     function nigthDayHandler(self) {
     var target  = document.querySelector('body');
@@ -31,7 +17,7 @@ span {
 	  i=i+1;
 	 }
 }
-else {
+ else {
 	 target.style.backgroundColor='white';
 	 target.style.color='black';
 	 self.value='night';
@@ -44,11 +30,26 @@ else {
 }
 }
 </script>
+<style>
+.js{ 
+		font-weight:bold;
+		color:red;
+}
+#first{
+    color:green;
+}
+span {
+		color:blue;
+}
+</style>
+<meta charset="UTF-8">
+<title>Style 속성엔 css가 와야한다</title>	
+
 </head>
 <body>
 	<h1><a href="index.html"> WEB</a></h1>
-	 <input type="button" value="night" onclick="nigthDayHandler(this);
-	 ">
+	 <input type="button" value="night" onclick="nigthDayHandler(this);">
+	  <input type="button" value="night" onclick="nigthDayHandler(this);">
 	<ol>
 	<li><a href="1.html">HTML</a> </li>
 	<li><a href="2.html">CSS</a></li>
