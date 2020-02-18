@@ -14,17 +14,24 @@
     nightDayHandler(this);
   ">
   <ol>
-    <li><a onclick="
-      document.querySelector('article').innerHTML ='<h2>HTML</h2> HTML is....';
-      ">HTML</a></li>
-    <li><a onclick="
-      document.querySelector('article').innerHTML ='<h2>CSS</h2> CSS is....';
-      ">CSS</a></li>
-    <li><a href="3.html">JavaScript</a></li>
+    <li><a onclick="fetchPage('html')">HTML</a></li>
+    <li><a onclick="fetchPage('css')">CSS</a></li>
+    <li><a href="3.html" onclick="fetchPage('javascript')">JavaScript</a></li>
   </ol>
 <article>
 
-</article>
 
+</article>
+    <script>
+    function fetchPage(name){
+   fetch(name).then(function(response){
+		response.text().then(function(text){
+			alert(text);
+			document.querySelector('article').innerHTML=text;
+		})
+		})
+    }
+
+   </script>
 </body>
 </html>
