@@ -20,11 +20,10 @@ public class Practice1 {
 	    int RoomPrice = Room*(int)diff;
 	    DecimalFormat df = new DecimalFormat("#,###");
 	      String Com = df.format(RoomPrice);
-	     System.out.println(Com);
-	     
-	     int bb = (int)2.4;
-	    float abc =(float)2.4;
-	    
+
+	   
+	  
+	   
 	     
 		
 	}
