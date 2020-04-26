@@ -5,18 +5,23 @@ import java.util.Scanner;
 public class Star {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-			System.out.println("몇 단을 출력해볼까요? ~>");
-			Scanner sc = new Scanner(System.in);
-			String abc =  sc.nextLine();
-			int gugu =  Integer.parseInt(abc);
-			for(int i=gugu; i<=gugu; i++) {
-					for(int j=1; j<=9; j++) {
-			
-						System.out.printf("%d x %d = %d",i,j,i*j);
-						System.out.println();
-					}
+		int sum = 0;
+		int num;
+		boolean flag = true;
+		String tmp;
+		System.out.println("합계를 구할 숫자를 입력하세요 (끝내려면 0 을 입력하세요).");
+		Scanner scanner = new Scanner(System.in);
+		while (flag) {
+			System.out.println(">>");
+			tmp = scanner.nextLine();
+			num = Integer.parseInt(tmp);
+			if (num != 0) {
+				sum += num;
+			} else {
+				flag = false;
 			}
-			
+		}
+		System.out.println("합계:" + sum);
+
 	}
 }
