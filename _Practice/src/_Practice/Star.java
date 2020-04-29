@@ -3,24 +3,21 @@ package _Practice;
 public class Star {
 
 	public static void main(String[] args) {
-		int[] arr = new int[5];
-		System.out.println("[변경전]");
-		System.out.println("arr.length:" + arr.length);
-		
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = i+1;
-			System.out.println("arr[" + i + "]" + arr[i]);
+		int[] ball = new int[45];
+		for (int i = 0; i < ball.length; i++) // 45개의 ball 의 값을 저장
+			ball[i] = i + 1;
+
+		int temp;
+		int y;
+		for (int i = 0; i < 6; i++) {
+			y = (int) (Math.random() * 45); // 0 ~ 44 까지 45개
+			temp = ball[i];
+			ball[i] = ball[y];
+			ball[y] = temp;
 		}
-		System.out.println("변경 후");
-		int[] temp = new int[arr.length * 2];
 		
-		for(int i=0; i<arr.length; i++)
-			temp[i] = arr[i];
-			arr=temp; //arr참조변수 는 temp를 참조한다 
-			//배열은 참조변수를 통해서만 접근 할 수 있고 , 자신을 가리키는 참조변수가 없는 배열은 사용 할 수 없다 .
-		System.out.println(arr.length);
-		for(int i=0; i<arr.length; i++) 
-			System.out.println("arr["+i+"]"+arr[i]);
-		
+		for (int i = 0; i < 6; i++)
+			System.out.printf("ball[%d]=%d%n", i, ball[i]);
+
 	}
 }
