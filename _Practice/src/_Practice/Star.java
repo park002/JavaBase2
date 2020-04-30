@@ -3,21 +3,28 @@ package _Practice;
 public class Star {
 
 	public static void main(String[] args) {
-		int[] ball = new int[45];
-		for (int i = 0; i < ball.length; i++) // 45개의 ball 의 값을 저장
-			ball[i] = i + 1;
-
-		int temp;
-		int y;
-		for (int i = 0; i < 6; i++) {
-			y = (int) (Math.random() * 45); // 0 ~ 44 까지 45개
-			temp = ball[i];
-			ball[i] = ball[y];
-			ball[y] = temp;
+		int[] array = new int[10];
+		for (int z = 0; z < array.length; z++) {
+			int abc = (int) (Math.random() * 80 + 1);
+			array[z] = abc;
 		}
-		
-		for (int i = 0; i < 6; i++)
-			System.out.printf("ball[%d]=%d%n", i, ball[i]);
 
+		for (int i = 0; i < array.length - 1; i++) {
+			boolean changed = false;
+			for (int j = 0; j < array.length - 1 - i; j++) {
+				if (array[j] > array[j + 1]) {
+					int temp = array[j];
+					array[j] = array[j + 1];
+					array[j + 1] = temp;
+					changed = true;
+				}
+			}
+			if (!changed)
+				break;
+
+			for (int k = 0; k < array.length; k++)
+				System.out.print(array[k] + ",");
+			System.out.println();
+		}
 	}
 }
