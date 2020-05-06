@@ -14,6 +14,7 @@ public class Star {
 		age = age+5;
 		System.out.println(year);
 		System.out.println(age);
+		System.out.println("¿¬½À");
 		
 		
 		
