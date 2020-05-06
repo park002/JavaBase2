@@ -1,23 +1,23 @@
 package _Practice;
 
-class Data {
-	int x;
-}
+
 
 public class Star {
 	public static void main(String[] args) {
-		Data d = new Data();
-		d.x = 10;
-		System.out.println("x의 값은=>" + d.x); // 10
-		change(d); // 1000
-		System.out.println("After Change(d.x)");
-		System.out.println("x의값은 =>" + d.x); // 10
-
-	}
-
-	static void change(Data x) {
-		x.x = 1000;
-		System.out.println("x의 값은=>" + x.x);
-	}
-
+		System.out.println("변수란 무엇인가");
+		System.out.println("변수란 값을 담을 공간");
+		int year = 0; //변수의 초기화
+		int age = 20;
+		System.out.println(year);
+		System.out.println(age);
+		year = age + 2000;
+		age = age+5;
+		System.out.println(year);
+		System.out.println(age);
+		
+		
+		
+		
+		
+}
 }
