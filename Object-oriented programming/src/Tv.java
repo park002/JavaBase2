@@ -11,7 +11,6 @@ public class Tv {
 
 	void channelP() {
 		channel++;
-		System.out.println(channel);
 	}
 
 	void power() {
@@ -24,12 +23,15 @@ public class Tv {
 	}
 
 	public static void main(String[] args) {
-		Tv t;
-		t = new Tv();
-		t.power();
-		t.color("°ËÀº»ö");
-		t.channelP();
-
+		Tv[] Tvarr = new Tv[3];
+		for (int i = 0; i < Tvarr.length; i++) {
+			Tvarr[i] = new Tv();
+			Tvarr[i].channel = i + 10; // 10 11 12
+		}
+		for (int i = 0; i < Tvarr.length; i++) {
+			Tvarr[i].channelP();
+			System.out.printf("Tvarr[%d].channel=%d%n", i, Tvarr[i].channel);
+		}
 	}
 
 }
