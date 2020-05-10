@@ -1,6 +1,5 @@
-import java.util.Arrays;
 
-public class forEach {
+public class Exercise04 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -14,5 +13,4 @@ public class forEach {
 		System.out.println("max : " + max);
 
 	}
-
 }
