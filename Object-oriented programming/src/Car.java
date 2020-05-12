@@ -1,14 +1,24 @@
 
 public class Car {
-
-	String company = "현기차";
-	String model = "그랜저";
-	String color = "검정";
-	int maxSpeed = 350;
+	// 필드
 	int speed;
 
-	Car(String color, int cc) {
-		this.color = color;
-		this.speed = cc;
+	// 생성자
+
+	// 메소드
+	int getSpeed() {
+		return speed;
+	}
+
+	void KeyTurnOn() {
+		System.out.println("시동을 켰습니다");
+	}
+
+	void run() {
+		for (int i = 1; i <= 50; i++) {
+			speed = i;
+			System.out.println("계속 달립니다 두둗두두 \n시속:" + speed + "km");
+		}
+
 	}
 }
