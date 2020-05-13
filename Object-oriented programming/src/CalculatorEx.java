@@ -3,11 +3,12 @@ public class CalculatorEx {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Calculator ca = new Calculator();
-		double areaRectangle = ca.areaRectangle(20);
-		double areaRectangle2 = ca.areaRectangle(20, 30);
-		System.out.println(areaRectangle);
-		System.out.println(areaRectangle2);
+		double pi = Calculator.pi * 10 * 10;
+		int result = Calculator.plus(30, 40);
+		int result2 = Calculator.minus(60, 30);
+		System.out.println(pi);
+		System.out.println(result);
+		System.out.println(result2);
 	}
 
 }

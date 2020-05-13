@@ -1,24 +1,27 @@
 
 public class Car {
-	// 필드
-	int speed;
+	private int speed;
+	private boolean stop;
 
-	// 생성자
+	public void setSpeed(int speed) {
+		if (speed < 0) {
+			this.speed = 0;
+			return;
+		}
+		this.speed = speed;
+	}
 
-	// 메소드
-	int getSpeed() {
+	public int getSpeed() {
 		return speed;
 	}
 
-	void KeyTurnOn() {
-		System.out.println("시동을 켰습니다");
+	public void setStop(boolean stop) {
+		this.stop = stop;
+		this.speed = 0;
 	}
 
-	void run() {
-		for (int i = 1; i <= 50; i++) {
-			speed = i;
-			System.out.println("계속 달립니다 두둗두두 \n시속:" + speed + "km");
-		}
-
+	public boolean isStop() {
+		return stop;
 	}
+
 }
