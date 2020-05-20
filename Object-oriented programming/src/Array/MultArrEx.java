@@ -17,7 +17,7 @@ public class MultArrEx {
 				int x = sc.nextInt();
 				int y = sc.nextInt();
 				System.out.printf("%d,%d\n", x, y);
-				
+
 				if (o[x][y] == 1) {
 					System.out.println("이미 흰 돌을 놓은 좌표입니다");
 					i--;
