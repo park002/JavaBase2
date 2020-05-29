@@ -1,6 +1,7 @@
 package inheritance;
 
 public class Car {
+	
 	public int speed;
 
 	public void speedUp() {
