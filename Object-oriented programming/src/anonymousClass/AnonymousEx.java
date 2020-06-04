@@ -12,10 +12,11 @@ public class AnonymousEx {
 
 		// 파라미터 타입으로 익명객체 타입
 		anony.method2(new Person() {
-			
+
 			void study() {
 				System.out.println("그리고 공부합니다 ㅎㅎ");
 			}
+
 			@Override
 			void wake() {
 				// TODO Auto-generated method stub

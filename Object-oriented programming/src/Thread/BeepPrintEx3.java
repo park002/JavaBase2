@@ -4,7 +4,7 @@ import java.awt.Toolkit;
 
 public class BeepPrintEx3 {
 	public static void main(String[] args) {
-		Thread thread = new Thread(new Runnable() {
+		Thread thread = new Thread(new Runnable() { // 익명 구현 객체
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
