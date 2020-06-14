@@ -1,14 +1,20 @@
 package CollectionEx;
 
 public class Board {
-	String subject;
-	String content;
-	String writer;
+	private String title;
+	private String content;
 
-	Board(String subject, String content, String writer) {
-		this.subject = subject;
+	public Board(String title, String content) {
+		this.title = title;
 		this.content = content;
-		this.writer = writer;
 	}
-	
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
 }

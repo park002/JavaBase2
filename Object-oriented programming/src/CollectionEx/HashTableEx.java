@@ -1,13 +1,22 @@
 package CollectionEx;
 
+import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class HashTableEx {
 	public static void main(String[] args) {
 		Map<String, String> map = new Hashtable<String, String>();
-
+		Set<String> set = new HashSet<String>();
+		set.add(null);
+		Iterator<String> iterator = set.iterator();
+		if (iterator.hasNext()) {
+			String abc = iterator.next();
+			System.out.println(abc);
+		}
 		map.put("spring", "12");
 		map.put("summer", "123");
 		map.put("fall", "1234");
