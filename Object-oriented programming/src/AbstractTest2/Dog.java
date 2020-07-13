@@ -1,8 +1,11 @@
 package AbstractTest2;
 
-public class Dog extends animal {
-	
-	public void sound() {
-		System.out.println("¿Ð¿Ð");
+public class Dog {
+	public Dog() {
+		int a;
+		
 	}
+
+	static int a;
+
 }
