@@ -5,7 +5,7 @@ public class ButtonEx2 {
 		Button btn = new Button();
 		btn.setOnclickListener(new CallListener());
 		btn.touch();
-		btn.setOnclickListener(new MessageListener());
+	
 		btn.touch();
 
 	}

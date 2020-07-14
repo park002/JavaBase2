@@ -12,8 +12,10 @@ public class Button {
 		listener.onClick();
 	}
 
-	static interface OnClickListener { // (정적) 중첩 인터페이스
-		void onClick();
+	static class OnClickListener { // (정적) 중첩 인터페이스
+		void onClick() {
+			System.out.println("정적중첩클래스 이올시다.");
+		}
 	}
 
 }
