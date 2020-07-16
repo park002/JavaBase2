@@ -3,6 +3,7 @@ package public2;
 public class Car {
 	// 필드의 다형성
 	Tire frontleftTire = new Tire("앞 왼쪽 바퀴", 5);
+	
 	Tire frontRightTire = new Tire("앞 오른쪽 바퀴", 5);
 	Tire backleftTire = new Tire("뒤 왼쪽 바퀴", 5);
 	Tire backRightTire = new Tire("뒤 오른쪽 바퀴", 2);
