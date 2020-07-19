@@ -18,11 +18,12 @@ public class DataInputOutputStreamEx {
 		dos.writeInt(2);
 		dos.flush();
 		dos.close();
+
 		FileInputStream fis = new FileInputStream("C:/Teee/primitive.db"); // 바이트기반 입력 스트림
 		DataInputStream dis = new DataInputStream(fis);
 
 		for (int i = 0; i < 2; i++) {
-			String name = dis.readUTF();
+			String name = dis.readUTF(); //문자열읽을 경우 
 			double score = dis.readDouble();
 			int order = dis.readInt();
 			System.out.println(name + ":" + score + ":" + order);
